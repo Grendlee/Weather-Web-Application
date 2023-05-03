@@ -3,21 +3,32 @@ let lat;
 let lng;
 
 
-function getLocation() {
+function getLocationWeather() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
+        navigator.geolocation.getCurrentPosition(returnOpenWeatherJSON);
     } else {
         console.log("Geolocation is not supported by this browser.");
     }
 }
         
-function showPosition(position) {
+function returnOpenWeatherJSON(position) {
     lat = position.coords.latitude;
     lng = position.coords.longitude;
     console.log(lat + " " + lng);
+    
+
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${'3192dc335da17718eeb8d5c1159826f5'}`)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => console.error(error));
 }
 
-getLocation();
+getLocationWeather();
+
+
+
 
 
 // fetch(`https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyBNWZTiqu2i4JsLHXOOvXr8QCWrJhnOhYo`, {
@@ -147,10 +158,3 @@ getLocation();
 //     });
 
 // });
-
-
-
-
-
-
-

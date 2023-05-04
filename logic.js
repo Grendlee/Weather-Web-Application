@@ -3,9 +3,10 @@ let lat;
 let lng;
 let weatherJSON;
 let windAngle;
+let windSpeed;
 
 
-function getLocationWeather() 
+async function getLocationWeather() 
 {
     if (navigator.geolocation) 
     {
@@ -16,35 +17,36 @@ function getLocationWeather()
     }
 }
         
-function assignOpenWeatherJSON(position) {
+async function assignOpenWeatherJSON(position) {
     lat = position.coords.latitude;
     lng = position.coords.longitude;
     console.log("Lat : " + lat + " Lon: " + lng);
     
 
-    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${'3192dc335da17718eeb8d5c1159826f5'}`)
+    await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${'3192dc335da17718eeb8d5c1159826f5'}`)
         .then(response => response.json())
         .then(data => {
             console.log(data);
             weatherJSON = data;
             windAngle = weatherJSON.wind.deg;
-            console.log("wind angle: " + windAngle);
+            windSpeed = weatherJSON.wind.speed;
         })
         .catch(error => console.error(error));
+        
+    displayWindData();
 }
 
-function displayWindDrirection()
+async function displayWindData()
 {
-    console.log(windAngle);
+    console.log("wind angle: " + windAngle);
+    console.log("wind speed: " + windSpeed);
 }
 
-// try{
-    getLocationWeather();
-// }
+
+getLocationWeather();
 
 
 
-displayWindDrirection();
 
 
 

@@ -96,9 +96,9 @@ getLocationWeather();
         
 //             console.log("wind angle is" + windAngle);
 
-            // let canv = document.getElementById("windDirectionArrow");
-            // let ctx = canv.getContext("2d");
-            // ctx.translate(150, 150);
+            let canv = document.getElementById("windDirectionArrow");
+            let ctx = canv.getContext("2d");
+            ctx.translate(150, 150);
 
             // let windDirection;
             // if((windAngle >= 338 && windAngle <= 360) || (windAngle >= 0 && windAngle <= 22))

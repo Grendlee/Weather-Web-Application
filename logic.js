@@ -23,7 +23,7 @@ async function assignOpenWeatherJSON(position) {
     console.log("Lat : " + lat + " Lon: " + lng);
     
 
-    await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${'3192dc335da17718eeb8d5c1159826f5'}`)
+    await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${'Your API key'}`)
         .then(response => response.json())
         .then(data => {
             console.log(data);
@@ -53,7 +53,7 @@ getLocationWeather();
 
 
 
-// fetch(`https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyBNWZTiqu2i4JsLHXOOvXr8QCWrJhnOhYo`, {
+// fetch(`https://www.googleapis.com/geolocation/v1/geolocate?key=Your API key`, {
 //   method: 'POST',
 //   headers: {
 //     'Accept': 'application/json',
@@ -71,9 +71,9 @@ getLocationWeather();
     
 
 //     let params = 'windDirection';
-//     fetch(`https://api.openweathermap.org/data/2.5/weather?lat={180}&lon={180}&appid={bc40e996d45a48d2e0260f2f727709e4}`, {
+//     fetch(`https://api.openweathermap.org/data/2.5/weather?lat={180}&lon={180}&appid={Your API key}`, {
 //     // headers: {
-//     //     'Authorization': '604a71c2-2517-11ed-8ab7-0242ac130002-604a721c-2517-11ed-8ab7-0242ac130002'
+//     //     'Authorization': 'Your API key'
 //     // }
 //         }).then((response) => response.json()).then((jsonData) => {
         
@@ -155,7 +155,7 @@ getLocationWeather();
             // params = 'windSpeed';
             // fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}`, {
             // headers: {
-            //     'Authorization': '604a71c2-2517-11ed-8ab7-0242ac130002-604a721c-2517-11ed-8ab7-0242ac130002'
+            //     'Authorization': 'Your API key'
             // }
             //     }).then((response) => response.json()).then((jsonData) => {
             //         console.log("windSpeed Object:");

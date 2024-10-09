@@ -23,7 +23,7 @@ async function assignOpenWeatherJSON(position) {
     console.log("Lat : " + lat + " Lon: " + lng);
     
 
-    await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${'3192dc335da17718eeb8d5c1159826f5'}`)
+    await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${'Your API Key'}`)
         .then(response => response.json())
         .then(data => {
             console.log(data);

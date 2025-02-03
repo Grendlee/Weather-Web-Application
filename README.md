@@ -1,4 +1,4 @@
-# Wind Direction and Speed Web Application
+# Real-Time Weather Dashboard
 
 ## Overview
 This is a simple JavaScript-based web application that provides real-time wind direction and speed based on the user's current location. The application utilizes the OpenWeather API to retrieve weather data and logs the information.
